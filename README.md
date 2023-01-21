@@ -2,12 +2,11 @@
 
 # About The Project
 
-This is a demo code for a React Redux Front End app to simulate a an employees poll, for the final assessment project for Udacity's React & Redux nanodegree.
+This is a demo code for a React Redux Front End app to simulate an employees poll, for the final assessment project for Udacity's React & Redux nanodegree.
 
 ### Built With
 
-- [![React][react.js]][react-url]
-- [![Redux][redux.js]][redux-url]
+React, Redux.
 
 <!-- GETTING STARTED -->
 
