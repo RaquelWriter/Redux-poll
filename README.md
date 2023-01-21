@@ -1,3 +1,24 @@
+<!-- ABOUT THE PROJECT -->
+
+# About The Project
+
+This is a demo code for a React Redux Front End app to simulate a an employees poll, for the final assessment project for Udacity's React & Redux nanodegree.
+
+### Built With
+
+- [![React][react.js]][react-url]
+- [![Redux][redux.js]][redux-url]
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+Download the zip and unzip. Open the folder in Visual Code Studio or your preferred code editor.
+
+### Installation
+
+For installing the node modules and packages, open the Terminal and type: npm install. Then type npm start.
+
 # Employee Polls Project
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
