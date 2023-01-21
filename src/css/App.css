@@ -1,0 +1,145 @@
+* {
+  margin: 0 auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+.margintop {
+  margin-top: 5em;
+}
+.margintop-small {
+  margin-top: 2em;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .left-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+}
+
+nav .right-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+  justify-content: flex-end;
+}
+img.avatar {
+  width: 200px;
+}
+img.avatar-small {
+  width: 50px;
+}
+
+.nav-button,
+button {
+  font-size: 1.3em;
+  border-radius: 10px;
+  background-color: #008cba;
+  padding: 10px;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.nav-button:hover,
+button:hover {
+  background-color: #af4c4c;
+  color: white;
+}
+.button-option:hover {
+  padding: 20px;
+}
+.nav-link {
+  color: #008cba;
+  transition-duration: 0.4s;
+}
+.nav-link:hover {
+  font-size: 1.2em;
+  color: #af4c4c;
+}
+.title-section {
+  font-size: 2em;
+  padding: 1.5em;
+}
+.title-section-404 {
+  margin-top: 4em;
+  font-size: 4em;
+}
+.pollcards-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  max-width: 70%;
+}
+.leaderboard-table {
+  text-align: center;
+  max-width: 70%;
+  background-color: #164f6e;
+  padding: 1.5em;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 10px;
+}
+.leaderboard-table .leaderboard-cell {
+  text-align: center;
+  vertical-align: center;
+  border-bottom: solid white;
+  border-radius: 2em;
+  padding: 1em;
+}
+
+.container-options-poll {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  flex-shrink: 1;
+}
+h3 {
+  padding: 2em;
+}
+.option-marked-as-voted {
+  flex: 1 1 0px;
+  background-color: #7faada;
+  border-radius: 10px;
+  color: white;
+  padding: 2em;
+}
+.option-marked-as-no-voted,
+.poll-card {
+  flex: 1 1 0;
+  border-color: #7faada;
+  border: solid 2px;
+  border-radius: 10px;
+  padding: 2em;
+}
+.input-add {
+  font-size: 1.3em;
+  width: 40em;
+  height: 2em;
+  border-radius: 10px;
+}
+.input-login {
+  font-size: 1em;
+  width: 30em;
+  height: 2em;
+  border-radius: 10px;
+}
+.alert-message {
+  font-size: 1.2em;
+  color: rgb(150, 58, 0);
+}
