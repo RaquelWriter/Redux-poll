@@ -44,7 +44,7 @@ const mapStateToProps = ({ users }) => {
       answers: Object.keys(user.answers).length,
       created: Object.keys(user.questions).length,
     }))
-    .sort((a, b) => b.answers - a.answers);
+    .sort((a, b) => b.answers - a.answers + (b.created - a.created));
 
   return { usersList };
 };
