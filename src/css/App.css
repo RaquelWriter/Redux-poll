@@ -17,6 +17,11 @@
 .margintop-small {
   margin-top: 2em;
 }
+
+.button-toggle {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 nav {
   display: flex;
   justify-content: space-between;
