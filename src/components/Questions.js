@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleSaveAnswers } from '../actions/questions';
@@ -14,14 +14,16 @@ const withRouter = (Component) => {
   return ComponentWithRouterProp;
 };
 function Questions(props) {
+  const [questionFound, setQuestionFound] = useState(true);
+
   const navigate = useNavigate();
+  console.log('props.router.params: ', props.router.params.questionId);
+
   useEffect(() => {
-    if (props.questionNotFound) {
-      navigate('/404');
-    } else {
-      return;
-    }
-  }, [props.questionNotFound]);
+    props.qfound ? setQuestionFound(true) : setQuestionFound(false);
+    !questionFound && navigate('/404');
+    console.log('questionNotFound: ', questionFound);
+  }, [questionFound]);
 
   const {
     dispatch,
@@ -126,8 +128,8 @@ const mapStateToProps = ({ login, users, questions }, props) => {
   const { isLoggedIn, authedUser } = login;
   const { questionId } = props.router.params;
 
-  if (!questions[questionId]) {
-    return { questionNotFound: true };
+  if (questions[questionId] === undefined) {
+    return { qFound: false };
   }
 
   const question = questions[questionId];
@@ -177,6 +179,7 @@ const mapStateToProps = ({ login, users, questions }, props) => {
     percentageOptionOne,
     percentageOptionTwo,
     optionVoted,
+    qfound: true,
   };
 };
 

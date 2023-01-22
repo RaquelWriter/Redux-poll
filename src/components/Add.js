@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { handleSaveQuestions } from '../actions/questions';
+import { handleSaveQuestionInUsers } from '../actions/users';
 
 export function Add(props) {
   const navigate = useNavigate();
@@ -20,10 +21,12 @@ export function Add(props) {
   };
 
   const handleSubmit = (e) => {
+    console.log('AUTHOR: ', props.author);
     e.preventDefault();
     !firstOption && setAlertMessage('Please, type something as First Option');
     !secondOption && setAlertMessage('Please, type something as Second Option');
     if (firstOption && secondOption) {
+      // Save question in questions and users
       dispatch(handleSaveQuestions(firstOption, secondOption, props.author));
       navigate('/');
     }

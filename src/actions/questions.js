@@ -1,3 +1,4 @@
+import { saveQuestionInUsers } from './users';
 import { saveQuestionAnswer, saveQuestion } from '../utils/api';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
@@ -59,6 +60,7 @@ export function handleSaveQuestions(optionOneText, optionTwoText, author) {
         dispatch(
           saveQuestionToState(id, author, optionOne, optionTwo, timestamp)
         );
+        dispatch(saveQuestionInUsers(id, author));
       })
       .catch((error) => {
         console.log(error);

@@ -28,9 +28,9 @@ const App = (props) => {
   }, []);
 
   useEffect(() => {
-    if (!routes.includes(location.pathname)) {
+    /*     if (!routes.includes(location.pathname)) {
       navigate('/404');
-    }
+    } */
     if (!props.isLoggedIn) {
       if (location.pathname !== '/login') {
         navigate('/login');
