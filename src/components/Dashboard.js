@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PollCard from './PollCard';
 import formatDate from '../utils/formatDate';
@@ -13,10 +14,26 @@ const Dashboard = (props) => {
   );
 
   const { users, newQuestions, doneQuestions } = props;
-  return (
+  const [newQuestionsShow, setQuestionsShown] = useState(true);
+
+  const toggleQuestionsShown = (e) => {
+    e.preventDefault();
+    return newQuestionsShow
+      ? setQuestionsShown(false)
+      : setQuestionsShown(true);
+  };
+
+  return newQuestionsShow ? (
     <>
       <div className='title-section'>New Questions</div>
 
+      <button
+        className='button-toggle'
+        type='submit'
+        onClick={toggleQuestionsShown}
+      >
+        Toggle to Questions Done
+      </button>
       <div className='pollcards-wrapper'>
         {newQuestions.map((question) => (
           <PollCard
@@ -27,9 +44,18 @@ const Dashboard = (props) => {
           />
         ))}
       </div>
-
+    </>
+  ) : (
+    <>
       <div className='title-section'>Questions done</div>
 
+      <button
+        className='button-toggle'
+        type='submit'
+        onClick={toggleQuestionsShown}
+      >
+        Toggle to New Questions
+      </button>
       <div className='pollcards-wrapper'>
         {doneQuestions.map((question) => (
           <PollCard
